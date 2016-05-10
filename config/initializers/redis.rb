@@ -1,0 +1,1 @@
+$redis = Redis::Namespace.new("find_your_mp", :redis => Redis.new)
