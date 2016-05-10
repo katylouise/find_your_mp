@@ -16,6 +16,5 @@ class MembersController < ApplicationController
 	def show
 		@member = Member.new
 		@member.set_properties(JSON.load($redis.get("member_data")))
-		@data = JSON.load($redis.get("member_data"))
 	end
 end
