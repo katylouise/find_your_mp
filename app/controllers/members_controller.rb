@@ -4,7 +4,7 @@ class MembersController < ApplicationController
 
 	def index
 	end
-	
+
 	def fetch
 		@data_call = DataApiCall.new
 		@member_data = @data_call.get_data(params[:postcode])
@@ -14,6 +14,8 @@ class MembersController < ApplicationController
 	end
 
 	def show
+		@member = Member.new
+		@member.set_properties(JSON.load($redis.get("member_data")))
 		@data = JSON.load($redis.get("member_data"))
 	end
 end
