@@ -9,11 +9,11 @@ class MembersController < ApplicationController
 		@data_call = DataApiCall.new
 		@member_data = @data_call.get_data(params[:postcode])
 		@id = @member_data["Members"]["Member"]["Member_Id"]
-		$redis.set("member_data", @member_data)
+		$redis.set("member_data", @member_data.to_json)
 		redirect_to member_path(id: @id)
 	end
 
 	def show
-		@data = $redis.get("member_data").to_json
+		@data = JSON.load($redis.get("member_data"))
 	end
 end
