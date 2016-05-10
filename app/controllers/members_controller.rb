@@ -18,7 +18,7 @@ class MembersController < ApplicationController
 		@member.set_properties(JSON.load($redis.get("member_data")))
 		respond_to do |format|
 		  format.html
-		  format.json { render :json => @member }
+		  format.json { render json: @member }
 		end
 	end
 end

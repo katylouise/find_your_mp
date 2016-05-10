@@ -29,9 +29,10 @@ feature 'members' do
 			expect(page).to have_css('img[src*="http://data.parliament.uk/membersdataplatform/services/images/MemberPhoto/4138/"]')
 		end
 
-	 #  scenario 'should display JSON format when the url is .json' do
-		# 	click_button 'Find', :format => :json
-		# 	expect(page).to have_content('{"name":"Rushanara Ali MP","member_id":"4138","image_link":"http://data.parliament.uk/membersdataplatform/services/images/MemberPhoto/4138/"}')
-		# end
+	  scenario 'should display JSON format when the uri is followed by .json' do
+	  	visit(current_path + '.json')
+			expect(page).to have_content('{"name":"Rushanara Ali MP","member_id":"4138","image_link":"http://data.parliament.uk/membersdataplatform/services/images/MemberPhoto/4138/"}')
+		end
+
 	end
 end
