@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'json_view_stub/json_view_stub'
 
 feature 'members' do
 
@@ -28,7 +29,7 @@ feature 'members' do
 
 	  scenario 'should display JSON format when the uri is followed by .json' do
 	  	visit(current_path + '.json')
-			expect(page).to have_content('{"name":"Rushanara Ali MP","member_id":"4138","image_link":"http://data.parliament.uk/membersdataplatform/services/images/MemberPhoto/4138/"}')
+			expect(page).to have_content(JSON_VIEW_STUB)
 		end
 
 	end
