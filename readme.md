@@ -1,5 +1,7 @@
 # Find Your MP
 
+[![Build Status](https://travis-ci.org/katylouise/find_your_mp.svg?branch=master)](https://travis-ci.org/katylouise/find_your_mp)
+
 A simple Ruby on Rails app using the [data.parliament](http://www.data.parliament.uk/) API.  It enables a user to search for their MP using their postcode.  Data is cached using Redis.
 
 ## Getting Started
