@@ -1,9 +1,9 @@
-MEMBER_DATA_STUB = '{
+JSON_MEMBER_DATA_STUB = '{
   "Members": {
     "Member": {
-      "-Member_Id": "4138",
-      "-Dods_Id": "58561",
-      "-Pims_Id": "5735",
+      "Member_Id": "4138",
+      "Dods_Id": "58561",
+      "Pims_Id": "5735",
       "DisplayAs": "Rushanara Ali",
       "ListAs": "Ali, Rushanara",
       "FullTitle": "Rushanara Ali MP",

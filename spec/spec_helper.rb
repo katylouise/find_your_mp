@@ -14,7 +14,7 @@
 #
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
-require_relative 'response_stubs/member_data_stub'
+require_relative 'response_stubs/xml_member_data_stub'
 
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
@@ -34,9 +34,13 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
-  stub_request(:get, "http://data.parliament.uk/membersdataplatform/services/mnis/members/query/fymp=e29jn/Committees%7CBiographyEntries%7CInterests/").
-    with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
-    to_return(status: 200, body: MEMBER_DATA_STUB, headers: {})
+    stub_request(:get, "http://data.parliament.uk/membersdataplatform/services/mnis/members/query/fymp=E29JH/").
+    with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Ruby'}).
+    to_return(:status => 200, :body => XML_MEMBER_DATA_STUB, :headers => {})
+
+    # stub_request(:get, "http://data.parliament.uk/membersdataplatform/services/mnis/members/query/fymp=e29jn/Committees%7CBiographyEntries%7CInterests/").
+    # with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
+    # to_return(status: 200, body: MEMBER_DATA_STUB, headers: {})
   end
 
   # rspec-mocks config goes here. You can use an alternate test double
