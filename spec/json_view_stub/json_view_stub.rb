@@ -1,0 +1,1 @@
+JSON_VIEW_STUB = '{"name":"Rushanara Ali MP","member_id":"4138","image_link":"http://data.parliament.uk/membersdataplatform/services/images/MemberPhoto/4138/"}'
