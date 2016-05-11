@@ -22,10 +22,10 @@ feature 'members' do
 
 		scenario 'should redirect to member id page' do
 			expect(current_path).to eq('/members/4138')
-			expect(page).to have_content('Rushanara Ali MP')
 		end
 
-		scenario 'should display the image with the correct link' do
+		scenario 'should display the correct information related to the member' do
+			expect(page).to have_content('Rushanara Ali MP')
 			expect(page).to have_css('img[src*="http://data.parliament.uk/membersdataplatform/services/images/MemberPhoto/4138/"]')
 		end
 

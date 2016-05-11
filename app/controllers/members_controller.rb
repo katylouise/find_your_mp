@@ -6,11 +6,11 @@ class MembersController < ApplicationController
 	end
 
 	def fetch
-		@data_call = DataApiCall.new
-		@member_data = @data_call.get_data(params[:postcode])
-		@id = @member_data["Members"]["Member"]["Member_Id"]
-		$redis.set("member_data", @member_data.to_json)
-		redirect_to member_path(id: @id)
+		data_call = DataApiCall.new
+		member_data = data_call.get_data(params[:postcode])
+		id = member_data["Members"]["Member"]["Member_Id"]
+		$redis.set("member_data", member_data.to_json)
+		redirect_to member_path(id: id)
 	end
 
 	def show

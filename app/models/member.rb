@@ -2,12 +2,6 @@ class Member
 
 	attr_reader :name, :member_id, :image_link
 
-	def initialize
-		@name
-    @member_id
-    @image_link
-	end
-
 	def set_properties(response)
 		@name = response['Members']['Member']['FullTitle']
     @member_id = response['Members']['Member']['Member_Id']
