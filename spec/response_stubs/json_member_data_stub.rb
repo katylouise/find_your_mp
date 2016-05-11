@@ -1,4 +1,4 @@
-MEMBER_DATA_STUB = '{
+JSON_MEMBER_DATA_STUB = '{
   "Members": {
     "Member": {
       "Member_Id": "4138",
